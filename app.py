@@ -243,7 +243,7 @@ with panel1:
             (estados),
             key='state')
         if state == "Todos los estados":
-            state_datos= crimenes.groupby('year').mean().reset_index()
+            state_datos= crimenes.groupby('year').sum().reset_index()
         else:
             state_datos= crimenes.loc[crimenes['state_name']== state].sort_values('year',ascending = True)
                 
