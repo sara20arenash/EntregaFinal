@@ -302,7 +302,7 @@ z14 = pd.DataFrame(b3.groupby(['state_name'])['rape_revised'].sum()).reset_index
 z14['tipo_delito'] =  'rape_revised'
 
 z15 = pd.DataFrame(b3.groupby(['state_name'])['robbery'].sum()).reset_index().rename(columns = {'robbery':'cantidad'})
-z15['tipo_delito'] =  'rob'
+z15['tipo_delito'] =  'robbery'
 
 z16 = pd.DataFrame(b3.groupby(['state_name'])['aggravated_assault'].sum()).reset_index().rename(columns = {'aggravated_assault':'cantidad'})
 z16['tipo_delito'] =  'aggravated_assault'
