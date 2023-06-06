@@ -73,7 +73,6 @@ b3['indice_crimines'] = b3['prom_tot_crimes'] / b3['population']
 
 ############## HATE CRIME  ###########################
 
-#h1 = hate.loc[:,['year','state_name','agency_type_name', 'location_name','offender_race', 'bias_desc','total_offender_count','offense_name','victim_types','victim_count']]
 
 
 #Tratamiento de nulos de las variables, se reemplazaron los nulos con la categoria de desconocido/otro.
@@ -244,7 +243,7 @@ with panel1:
             (estados),
             key='state')
         if state == "Todos los estados":
-            state_datos= crimenes.groupby('year').sum().reset_index()
+            state_datos= crimenes.groupby('year').mean().reset_index()
         else:
             state_datos= crimenes.loc[crimenes['state_name']== state].sort_values('year',ascending = True)
                 
